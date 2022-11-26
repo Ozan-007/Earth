@@ -16,22 +16,22 @@ const Earth = () => {
     [Day, Normal, Specular, Clouds]
   );
 
-  //   const earthRef = useRef();
-  //   const cloudRef = useRef();
+  // const earthRef = useRef();
+  // const cloudRef = useRef();
 
-  //   useFrame(({ clock }) => {
-  //     const elapsedTime = clock.getElapsedTime();
-  //     earthRef.current.rotation.y = elapsedTime / 6;
-  //     cloudRef.current.rotation.y = elapsedTime / 6;
-  //   });
+  // useFrame(({ clock }) => {
+  //   const elapsedTime = clock.getElapsedTime();
+  //   cloudRef.current.rotation.y = elapsedTime / 6;
+  //   earthRef.current.rotation.y = elapsedTime / 6;
+  // });
 
   return (
     <>
       <ambientLight intensity={1} />
       <Stars radius={300} depth={80} count={2000} factor={6} saturation={0} />
       <pointLight color="#f5f3ea" position={[8, 3, -1]} intensity={1.5} />
-      {/* <mesh>
-        <sphereGeometry args={[1.00000000000005, 32, 32]} />
+      <mesh>
+        <sphereGeometry args={[1.00000000000005, 360, 32]} />
         <meshPhongMaterial
           map={cloudsMap}
           opacity={0.4}
@@ -39,7 +39,7 @@ const Earth = () => {
           transparent={true}
           side={THREE.DoubleSide}
         />
-      </mesh> */}
+      </mesh>
       <mesh>
         <sphereGeometry args={[1, 360, 32]} />
         <meshPhongMaterial specularMap={specularMap} />
